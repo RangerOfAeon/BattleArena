@@ -37,17 +37,17 @@ namespace BattleArena
             int FoeResult = Program.FoeStr + Program.FoeDice;
             if(YourResult > FoeResult)
             {
-                FoeHp = FoeHp - YourDmg;
+                Program.FoeHp = Program.FoeHp - Program.YourDmg;
                 Program.FoeHp = FoeHp;
-                Console.WriteLine("Good");
+                Console.WriteLine("Good" + YourResult + " > " + FoeResult);
                 YourResult = YourResult - YourResult;
                 FoeResult = FoeResult - FoeResult;
             }
             else if(FoeResult > YourResult)
             {
-                YourHp = YourHp - FoeDmg;
+                Program.YourHp = Program.YourHp - Program.FoeDmg;
                 Program.YourHp = YourHp;
-                Console.WriteLine("Bad");
+                Console.WriteLine("Bad" + FoeResult + " > " + YourResult);
                 YourResult = YourResult - YourResult;
                 FoeResult = FoeResult - FoeResult;
             }

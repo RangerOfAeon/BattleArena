@@ -38,6 +38,14 @@ namespace BattleArena
                             battleRound.OneRound();
                             Console.ReadKey();
                         }
+                        if (Program.YourHp > 0)
+                        {
+                            Console.WriteLine("You won!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("You died");
+                        }
                         break;
                     case ConsoleKey.R:
                         break;
