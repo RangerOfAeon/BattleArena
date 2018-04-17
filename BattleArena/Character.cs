@@ -27,17 +27,18 @@ namespace BattleArena
             Console.WriteLine("Damage: " + Program.YourDmg);
             Console.WriteLine("Health: " + Program.YourHp);
         }
-
+        
 
         public void YourName()
         {
             Console.WriteLine("What's you name?");                              // Här frågar jag spelaren vad den heter, och sparar det i en variabel.
-            Program.YourName = Console.ReadLine();
+            string Name = Console.ReadLine();
+            Program.YourName = Name;
             Console.Clear();
         }
         public void ReadName()
         {
-            Console.WriteLine("Name :" + Program.YourName);                     // Här skriver jag ut namnet på konsolen.
+            Console.WriteLine("Name: " + Program.YourName);                     // Här skriver jag ut namnet på konsolen.
         }
 
         public void FoeStats()
