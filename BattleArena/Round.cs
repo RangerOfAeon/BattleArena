@@ -8,52 +8,43 @@ namespace BattleArena
 {
     class Round
     {
-        int YourDice = Program.YourDice;
-        int YourStr = Program.YourStr;
-        int YourDmg = Program.YourDmg;
-        int YourHp = Program.YourHp;
-
-        int FoeDice = Program.FoeDice;
-        int FoeStr = Program.FoeStr;
-        int FoeDmg = Program.FoeDmg;
-        int FoeHp = Program.FoeHp;
-
         public void Dice()
         {
             Random DiceRng = new Random();
             int dice = DiceRng.Next(1, 7);
             Program.YourDice = dice;
+            int badDice = DiceRng.Next(1, 7);
+            Program.FoeDice = badDice;
         }
-        public void BadDice()
-        {
-            Random DiceRng = new Random();
-            int dice = DiceRng.Next(1, 7);
-            Program.FoeDice = dice;
-        }
-
         public void OneRound()
         {
             int YourResult = Program.YourStr + Program.YourDice;
             int FoeResult = Program.FoeStr + Program.FoeDice;
+            int YourStr = Program.YourStr;
+            int YourDice = Program.YourDice;
+            int FoeStr = Program.FoeStr;
+            int FoeDice = Program.FoeDice;
             if(YourResult > FoeResult)
             {
                 Program.FoeHp = Program.FoeHp - Program.YourDmg;
-                Program.FoeHp = FoeHp;
-                Console.WriteLine("Good" + YourResult + " > " + FoeResult);
-                YourResult = YourResult - YourResult;
-                FoeResult = FoeResult - FoeResult;
+                Console.WriteLine("Your lost the clash:");
+                Console.WriteLine(YourResult + " (" + YourStr + " + " + YourDice + " )" + " > " + FoeResult + " (" + FoeStr + " + " + FoeDice + ")");
+                Console.WriteLine("Foes health: " + Program.FoeHp);
+                Console.WriteLine();
             }
             else if(FoeResult > YourResult)
             {
                 Program.YourHp = Program.YourHp - Program.FoeDmg;
-                Program.YourHp = YourHp;
-                Console.WriteLine("Bad" + FoeResult + " > " + YourResult);
-                YourResult = YourResult - YourResult;
-                FoeResult = FoeResult - FoeResult;
+                Console.WriteLine("Your lost the clash:");
+                Console.WriteLine(FoeResult + " (" + FoeStr + " + " + FoeDice + ")" + " > " + YourResult + " (" + YourStr + " + " + YourDice + ")");
+                Console.WriteLine("Your health: " + Program.YourHp);
+                Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("You stare eachother down, and nobody attacks.");
+                Console.WriteLine("You stare eachother down, and nobody attacks:");
+                Console.WriteLine(YourResult + " (" + YourStr + " + " + YourDice + ")" + " = " + FoeResult + " (" + FoeStr + " + " + FoeDice + ")");
+                Console.WriteLine();
             }
         }
     }

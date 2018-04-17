@@ -12,15 +12,12 @@ namespace BattleArena
         {
 
 
-            Character characterMain = new Character();
+            Character characterMain = new Character();                          //
             Round roundMain = new Round();
             Battle battleMain = new Battle();
-            Program secondProgram = new Program();
-
 
             characterMain.YourStats();
             characterMain.YourName();
-
             battleMain.Choice();
         }
 
@@ -35,6 +32,11 @@ namespace BattleArena
              public static int FoeStr;
              public static int FoeDmg;
              public static int FoeHp;
+
+             public static int Score;
+             public static string foeName;
+             public static List<string> FoeNames = new List<string>();
+
 
     }
     }
