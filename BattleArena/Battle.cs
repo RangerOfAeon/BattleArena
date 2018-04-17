@@ -26,7 +26,7 @@ namespace BattleArena
                             Console.Clear();                                        // och sedan så skriver konsolen ut spelarens namn och stats, och likadant för 
                             battleCharacter.FoeGenerator();                         // motståndaren.
 
-                            Console.WriteLine(Program.YourName);
+                            battleCharacter.ReadName();
                             battleCharacter.WriteStats();
                             Console.WriteLine();
 

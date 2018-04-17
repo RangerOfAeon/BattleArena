@@ -99,7 +99,7 @@ namespace BattleArena
 
         public void Retire()
         {
-            Console.WriteLine("Your Name: " + Program.YourName);                    // Här skriver metoden ut spelarens stats, kollar om spelaren är död, och skriver
+            ReadName();                                                             // Här skriver metoden ut spelarens stats, kollar om spelaren är död, och skriver
             Console.WriteLine("Your Strength: " + Program.YourStr);                 // då ut om du överlevde, eller vem du blev dödad av. Jag skriver också ut
             Console.WriteLine("Your Damage: " + Program.YourDmg);                   // hur mycket poäng spelaren får. Spelaren får 5 för varje motsådare han dödat,
             Console.WriteLine("Your Health: " + Program.YourHp);                    // 5 om spelaren överlevde och 1 pluspoäng för varje hp spelaren har kvar.
